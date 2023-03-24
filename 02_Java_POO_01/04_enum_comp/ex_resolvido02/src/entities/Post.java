@@ -58,17 +58,19 @@ public class Post {
 
     @Override
     public String toString() {
-        String comments = "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(title + "\n");
+        sb.append(likes + " likes - ");
+        sb.append(moment.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n");
+        sb.append(content + "\n");
+        sb.append("Comments:\n");
+
         for (Comment c : this.comments) {
-            comments += c.getText() + "\n";
+            sb.append(c.getText() + "\n");
         }
 
-        return title + "\n" +
-        likes + " likes - " +
-        moment.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n" +
-        content + "\n" +
-        "Comments:\n" +
-        comments;
+        return sb.toString();
 
     }
 }

@@ -7,7 +7,7 @@ import java.time.Instant;
 
 public class Program {
     public static void main(String[] args) {
-        //add Post
+        //add Post #1
         Instant moment = Instant.parse("2018-06-21T13:05:44-03:00");
         String title = "Traveling to New Zealand";
         String content = "I'm going to visit this wonderful country!";
@@ -22,10 +22,12 @@ public class Program {
         content = "See you tomorrow";
         likes = 5;
 
+        // Add Post #2
         Post post02 = new Post(moment, title, content, likes);
         post02.addComment(new Comment("Good night"));
         post02.addComment(new Comment("May the Force be with you"));
 
+        // Print Posts
         System.out.println(post01);
         System.out.println(post02);
     }
