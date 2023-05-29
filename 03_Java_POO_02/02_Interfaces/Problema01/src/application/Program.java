@@ -2,6 +2,7 @@ package application;
 
 import model.entities.CarRental;
 import model.entities.Vehicle;
+import model.service.BrazilTaxService;
 import model.service.RentalService;
 
 import java.time.LocalDateTime;
@@ -35,7 +36,7 @@ public class Program {
         System.out.print("Entre com o preço por dia: ");
         double pricePerDay = sc.nextDouble();
 
-        RentalService rentalService = new RentalService(pricePerHour, pricePerDay);
+        RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
         rentalService.processInvoice(carRental);
 
         System.out.println();
