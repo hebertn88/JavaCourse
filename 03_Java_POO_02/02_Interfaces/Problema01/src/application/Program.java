@@ -2,8 +2,8 @@ package application;
 
 import model.entities.CarRental;
 import model.entities.Vehicle;
-import model.service.BrazilTaxService;
-import model.service.RentalService;
+import model.services.BrazilTaxService;
+import model.services.RentalService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
